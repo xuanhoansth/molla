@@ -7,6 +7,12 @@ use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
+    public function changeLanguage($language)
+    {
+        Session::put('website_language', $language);
+
+        return redirect()->back();
+    }
     /**
      * Display a listing of the resource.
      *

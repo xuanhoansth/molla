@@ -18,7 +18,8 @@ class ProductCategoryController extends Controller
      */
     public function index()
     {
-        $productCategory = ProductCategory::query()->search()->paginate(10, ['*'], 'page', null);
+        $productCategory = ProductCategory::query()->search()
+            ->paginate(10, ['*'], 'page', null);
         return view('admin.products-category.index', compact('productCategory'));
     }
 
@@ -100,13 +101,13 @@ class ProductCategoryController extends Controller
      */
     public function destroy($id)
     {
-       $productCategory = ProductCategory::find($id);
-       if ($productCategory->products->count() >0 ){
-           return redirect()->action([ProductCategoryController::class,'index'])->with('Khong xoa duoc');
+        $productCategory = ProductCategory::find($id);
+        if ($productCategory->products->count() > 0) {
+            return redirect()->action([ProductCategoryController::class, 'index'])->with('Khong xoa duoc');
 
-       }else {
-           $productCategory->delete();
-           return redirect()->action([ProductCategoryController::class, 'index'])->with('Xoa thanh cong');
-       }
+        } else {
+            $productCategory->delete();
+            return redirect()->action([ProductCategoryController::class, 'index'])->with('Xoa thanh cong');
+        }
     }
 }

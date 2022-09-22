@@ -48,7 +48,6 @@
                                                           href="javascript:void(0)" data-sidebartype="mini-sidebar"><i
                             class="mdi mdi-menu font-24"></i></a></li>
             </ul>
-
             <!-- ============================================================== -->
             <!-- Right side toggle and nav items -->
             <!-- ============================================================== -->

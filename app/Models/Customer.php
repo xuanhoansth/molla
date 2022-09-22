@@ -9,5 +9,15 @@ use Spatie\MediaLibrary\InteractsWithMedia;
 class Customer extends Model
 {
     use HasFactory, InteractsWithMedia;
-    protected $table='customers';
+
+    protected $table = 'customers';
+
+    public function scopeSearch($query)
+    {
+        if ($key = request()->key) {
+            $query = $query->where('name', 'like', '%' . $key . '%')
+                ->orwhere('phone_number', 'like', '%' . $key . '%');
+        }
+        return $query;
+    }
 }

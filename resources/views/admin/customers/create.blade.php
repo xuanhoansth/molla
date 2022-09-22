@@ -20,7 +20,7 @@
                                 <div class="form-group row">
                                     <label class="col-sm-3 text-right control-label col-form-label">Giới tính</label>
                                     <div class="col-sm-9">
-                                        <select name="status" class="select2 form-control custom-select"
+                                        <select name="gender" class="select2 form-control custom-select"
                                                 style="width: 100%; height:36px;">
                                             <option>---Chọn---</option>
                                             <option value="1">Nam</option>
@@ -66,15 +66,15 @@
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-sm-3 text-right control-label col-form-label">Trạng thái</label>
-                                    <div class="col-sm-9">
-                                        <select name="status" class="select2 form-control custom-select"
-                                                style="width: 100%; height:36px;">
-                                            <option>---Chọn---</option>
-                                            <option value="1">Mở</option>
-                                            <option value="2">Khóa</option>
-                                            </optgroup>
-                                        </select>
-                                    </div>
+{{--                                    <div class="col-sm-9">--}}
+{{--                                        <select name="status" class="select2 form-control custom-select"--}}
+{{--                                                style="width: 100%; height:36px;">--}}
+{{--                                            <option>---Chọn---</option>--}}
+{{--                                            <option value="1">Mở</option>--}}
+{{--                                            <option value="2">Khóa</option>--}}
+{{--                                            </optgroup>--}}
+{{--                                        </select>--}}
+{{--                                    </div>--}}
                                 </div>
                             </div>
                             <div class="border-top">

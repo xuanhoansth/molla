@@ -22,7 +22,6 @@
                                     <th>Phone Number</th>
                                     <th>Note</th>
                                     <th>Created_At</th>
-                                    <th>Status</th>
                                     <th>Action</th>
                                 </tr>
                                 </thead>
@@ -38,10 +37,7 @@
                                         <td>{{$row->email}}</td>
                                         <td>{{$row->note}}</td>
                                         <td>{{$row->created_at}}</td>
-                                        <td>@if($row->status === 1) {{'Mở'}}
-                                            @else {{'Khóa'}}
-                                            @endif
-                                        </td>
+
                                         <td>
                                             <button type="button" class="btn btn-info " style="background: #3A688C"><a
                                                     href="/admin/customers/edit/{{$row->id}}" style="color: white">Edit</a>
@@ -66,7 +62,6 @@
                                     <th>Phone Number</th>
                                     <th>Note</th>
                                     <th>Created_At</th>
-                                    <th>Status</th>
                                     <th>Action</th>
                                 </tr>
                                 </tfoot>

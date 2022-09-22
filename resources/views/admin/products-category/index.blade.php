@@ -25,6 +25,7 @@
                                 <tbody>
                                 @foreach($productCategory as $row)
                                     <tr align="center">
+                                        <td>{{$row->id}}</td>
                                         <td>{{$row->name}}</td>
                                         <td>{{$row->products ? $row->products->count() : 0 }}</td>
                                         <td>{{$row->description}}</td>

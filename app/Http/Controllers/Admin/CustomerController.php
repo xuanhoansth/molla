@@ -16,7 +16,7 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        $customer = DB::table('customers')->paginate(10,['*'], 'page', null);
+        $customer = Customer::query()->search()->paginate(10,['*'], 'page', null);
 
         return view('admin.customers.index', compact('customer'));
     }
@@ -48,8 +48,6 @@ class CustomerController extends Controller
         $customer->phone_number = $request->phone_number;
         $customer->email = $request->email;
         $customer->note = $request->note;
-        $customer->created_at = $request->created_at;
-        $customer->status = $request->status;
 
         $customer->save();
         return redirect()->action([CustomerController::class, 'index']);
@@ -95,8 +93,6 @@ class CustomerController extends Controller
         $customer->phone_number = $request->phone_number;
         $customer->email = $request->email;
         $customer->note = $request->note;
-        $customer->created_at = $request->created_at;
-        $customer->status = $request->status;
 
         $customer->save();
         return redirect()->action([CustomerController::class, 'index']);

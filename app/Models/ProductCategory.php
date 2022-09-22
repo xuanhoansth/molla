@@ -12,6 +12,7 @@ class ProductCategory extends Model
 {
     use HasFactory;
     protected $table='product-categories';
+
     public function scopeSearch($query)
     {
         if ($key = request()->key)
@@ -19,6 +20,7 @@ class ProductCategory extends Model
             $query = $query->where('name', 'like', '%'.$key.'%');
         }
         return $query;
+
     }
     public function products()
     {
