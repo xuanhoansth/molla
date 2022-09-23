@@ -31,7 +31,7 @@
         <!-- End Logo -->
         <!-- ============================================================== -->
         <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
-            <form action="" class="form-inline" >
+            <form action="" class="form-inline">
                 <div class="form-group">
                     <input class="form-control" name="key" placeholder="Search By Name">
                 </div>
@@ -66,14 +66,13 @@
                             src="{{asset('admin/assets/images/users/1.jpg')}}" alt="user" class="rounded-circle"
                             width="31"></a>
                     <div class="dropdown-menu dropdown-menu-right user-dd animated">
-                        <a class="dropdown-item" href="javascript:void(0)"><i class="ti-user m-r-5 m-l-5"></i> Xin chào {{ Auth::user()->name }}</a>
+                        <a class="dropdown-item" href="javascript:void(0)"><i class="ti-user m-r-5 m-l-5"></i> Xin
+                            chào {{ Auth::user()->name }}</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="javascript:void(0)"><i class="ti-settings m-r-5 m-l-5"></i>
                             Account Setting</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="{{ route('logout') }}"
-                           onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();"><i class="fa fa-power-off m-r-5 m-l-5"></i>
+                        <a class="dropdown-item btnlogout" type="button"><i class="fa fa-power-off m-r-5 m-l-5"></i>
                             {{ __('Logout') }}
                         </a>
 
@@ -92,3 +91,9 @@
         </div>
     </nav>
 </header>
+<script>
+    $('btnlogout').click(function (e) {
+        e.preventDefault();
+        $('form#logout-form').submit();
+    })
+</script>
