@@ -41,15 +41,14 @@
                                             @endif
                                         </td>
                                         <td>
-                                            <button type="button" class="btn btn-info" style="background: #3A688C"><a
-                                                    href="/admin/contacts/edit/{{$row->id}}" style="color: white">Edit</a>
-                                            </button>
-                                            <form method="POST" action="/admin/contacts/delete/{{$row->id}}">
-                                                @method('PATCH')
-                                                @csrf
-                                                <button type="submit" class="btn btn-danger">Delete</button>
-                                            </form>
-                                        </td>
+                                            <a href="/admin/contact/edit/{{$row->id}}"
+                                               class="btn btn-sm btn-success">
+                                                <i class="fas fa-edit"></i>
+                                            </a>
+                                            <a href="/admin/contact/delete/{{$row->id}}"
+                                               class="btn btn-sm btn-danger btndelete">
+                                                <i class="fas fa-trash"></i>
+                                            </a>
                                     </tr>
                                 @endforeach
                                 </tbody>

@@ -23,21 +23,14 @@
 <script src="{{asset('admin/assets/libs/flot/jquery.flot.crosshair.js')}}"></script>
 <script src="{{asset('admin/assets/libs/flot.tooltip/js/jquery.flot.tooltip.min.js')}}"></script>
 <script src="{{asset('admin/dist/js/pages/chart/chart-page-init.js')}}"></script>
-<script src={{ url('ckeditor/ckeditor.js') }}></script>
+
 <script>
-
-    CKEDITOR.replace( 'description', {
-        extraPlugins: 'easyimage',
-        cloudServices_tokenUrl: 'https://example.com/cs-token-endpoint',
-        cloudServices_uploadUrl: 'https://your-organization-id.cke-cs.com/easyimage/upload/',
-        filebrowserBrowseUrl: '{{ asset('ckfinder/ckfinder.php') }}',
-        filebrowserImageBrowseUrl: '{{ asset('ckfinder/ckfinder.php?type=Images') }}',
-        filebrowserFlashBrowseUrl: '{{ asset('ckfinder/ckfinder.php?type=Flash') }}',
-        filebrowserUploadUrl: '{{ asset('ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files') }}',
-        filebrowserImageUploadUrl: '{{ asset('ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images') }}',
-        filebrowserFlashUploadUrl: '{{ asset('ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash') }}'
-
-    } );
+    $('.btndelete').click(function (ev) {
+        ev.preventDefault();
+        var _href = $(this).attr('href');
+        $('form#form-delete').attr('action', _href);
+        if (confirm('Bạn có chắc chắn muốn xóa không ?')) {
+            $('form#form-delete').submit();
+        }
+    })
 </script>
-@include('ckfinder::setup')
-@yield('js')

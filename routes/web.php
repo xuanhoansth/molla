@@ -141,9 +141,6 @@ Route::group(['prefix'=>'/admin/contacts'], function (){
     Route::PATCH('/delete/{id}', [Admin\ContactController::class,'destroy']);
 });
 
-
-Auth::routes();
-
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::any('/ckfinder/connector', '\CKSource\CKFinderBridge\Controller\CKFinderController@requestAction')
     ->name('ckfinder_connector');

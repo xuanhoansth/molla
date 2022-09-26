@@ -35,21 +35,13 @@
                                             @else <span class="badge badge-danger">Private</span>
                                             @endif
                                         </td>
-                                        {{--                                        <td>--}}
-                                        {{--                                            <button type="button" class="btn btn-info" style="background: #3A688C"><a--}}
-                                        {{--                                                    href="/admin/product-category/edit/{{$row->id}}" style="color: white">Edit</a>--}}
-                                        {{--                                            </button>--}}
-                                        {{--                                            <form method="POST" action="/admin/product-category/delete/{{$row->id}}">--}}
-                                        {{--                                                @method('PATCH')--}}
-                                        {{--                                                @csrf--}}
-                                        {{--                                                <button type="submit" class="btn btn-danger">Delete</button>--}}
-                                        {{--                                            </form>--}}
-                                        {{--                                        </td>--}}
                                         <td>
-                                            <a href="/admin/product-category/edit/{{$row->id}}" class="btn btn-sm btn-success">
+                                            <a href="/admin/product-category/edit/{{$row->id}}"
+                                               class="btn btn-sm btn-success">
                                                 <i class="fas fa-edit"></i>
                                             </a>
-                                            <a href="/admin/product-category/delete/{{$row->id}}" class="btn btn-sm btn-danger btndelete">
+                                            <a href="/admin/product-category/delete/{{$row->id}}"
+                                               class="btn btn-sm btn-danger btndelete">
                                                 <i class="fas fa-trash"></i>
                                             </a>
                                         </td>
@@ -80,15 +72,4 @@
 
     </div>
 @endsection
-@section('js')
-    <script>
-        $('.btndelete').click(function (ev){
-            ev.preventDefault();
-            var _href = $(this).attr('href');
-            $('form#form-delete').attr('action',_href);
-            if (confirm('Bạn có chắc chắn muốn xóa không ?')){
-                $('form#form-delete').submit();
-            }
-        })
-    </script>
-@stop
+

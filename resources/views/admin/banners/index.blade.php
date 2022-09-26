@@ -33,15 +33,14 @@
                                             @endif
                                         </td>
                                         <td>
-                                            <button type="button" class="btn btn-info" style="background: #3A688C"><a
-                                                    href="/admin/banners/edit/{{$row->id}}" style="color: white" >Edit</a>
-                                            </button>
-                                            <form method="POST" action="/admin/banners/delete/{{$row->id}}">
-                                                @method('PATCH')
-                                                @csrf
-                                                <button type="submit" class="btn btn-danger">Delete</button>
-                                            </form>
-                                        </td>
+                                            <a href="/admin/banners/edit/{{$row->id}}"
+                                               class="btn btn-sm btn-success">
+                                                <i class="fas fa-edit"></i>
+                                            </a>
+                                            <a href="/admin/banners/delete/{{$row->id}}"
+                                               class="btn btn-sm btn-danger btndelete">
+                                                <i class="fas fa-trash"></i>
+                                            </a>
                                     </tr>
                                 @endforeach
                                 </tbody>
